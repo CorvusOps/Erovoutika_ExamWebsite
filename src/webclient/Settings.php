@@ -57,18 +57,18 @@ if($_SESSION['client_sid']==session_id())
                     <div class="navbar-nav">
                         <a class="nav-item nav-link text-dark mt-3" href="../webexam/ExamList.php">Exam Lists</a>
                         <div class="btn-group">
-                          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                            <li>
-                                <?php echo '<a class="dropdown-item" href="Settings.php?clUrID='.$clUrID.'">' ?>
+                            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                                <li>
+                                    <?php echo '<a class="dropdown-item" href="Settings.php">' ?>
                                     <i class="bi bi-gear-fill me-2"></i>Settings</a></li>
-                            <li>
+                                <li>
                                 <a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                          </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@ if($_SESSION['client_sid']==session_id())
     }else
 	{
 		if($_SESSION['admin_sid']==session_id()){
-			header("location:404.php");		
+			header("location:../includes/error.php");		
 		}
 		else{
 				header("location:../login_template.php");

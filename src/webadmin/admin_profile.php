@@ -322,11 +322,11 @@ include '../includes/connectdb.php';
 	}else
 	{
 		if($_SESSION['staff_sid']==session_id()){
-			header("location:404.php");		
+			header("location:../includes/error.php");		
 		}
 		else{
 			if($_SESSION['customer_sid']==session_id()){
-				header("location:404.php");		
+				header("location:../includes/error.php");		
 			}else{
 				header("location:../login.php");
 			}

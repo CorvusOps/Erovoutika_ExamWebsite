@@ -49,38 +49,35 @@ if($_SESSION['client_sid']==session_id())
 </head>
 
 <body>
-	<header class="bg-white border-5 border-bottom border-primary">
-        <nav class="navbar navbar-expand-lg navbar-light ms-4 me-4">
-            <a class="navbar-brand mr-07" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-------------------------- HEADER ---------------------------->
+        <header class="bg-white border-5 border-bottom border-primary">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ms-5 me-5">
+                <a class="navbar-brand" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse ml-7" id="navbarTogglerDemo03">
-                <div class="navbar-nav float-end text-end pr-3">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-item nav-link text-dark mt-3" href="../webexam/ExamList.php">Exam List</a></li>
-                        <li class="nav-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-fill"></i>
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li>
-                          <?php echo
-                            '<a class="dropdown-item" href="Settings.php?clUrID='.$clUrID.'">'
-                            ?>
-                          <i class="bi bi-gear-fill me-2"></i>Settings</li>
-                        <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                      </ul>
+                <div class="collapse navbar-collapse position-absolute end-0" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link text-dark mt-3" href="../webexam/ExamList.php">Exam Lists</a>
+                        <div class="btn-group">
+                            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                                <li>
+                                    <?php echo '<a class="dropdown-item" href="Settings.php">' ?>
+                                    <i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                                <li>
+                                <a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
+                            </ul>
+                        </div>
                     </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        </nav>
-	</header>
+            </nav>
+        </header>
 
         <div class="container-fluid bg-light">
             <div class="main-body">
@@ -184,7 +181,7 @@ if($_SESSION['client_sid']==session_id())
                       echo '<div class="exam_card h-100">';
                         echo '<div class="card-body border border-2 border-primary rounded">';
                           echo '<h2 class="d-flex align-items-center border-5 border-bottom border-primary mb-4">'
-                          .$row["clExTitle"].'</h2>';
+                          .$row["clExName"].'</h2>';
 
                           echo '
                           <h6>Date Taken: </h6>
@@ -210,7 +207,7 @@ if($_SESSION['client_sid']==session_id())
     }else
 	{
 		if($_SESSION['admin_sid']==session_id()){
-			header("location:404.php");		
+			header("location:../includes/error.php");		
 		}
 		else{
 				header("location:../login_template.php");

@@ -170,12 +170,8 @@ a.btn.ms-3.mb-3 {
     height: 150px;
 }
 
-#i--button--edit{
+.c-a--examlist{
     background: #2055B5;
-}
-
-#i--button--check{
-     background: #2055B5;
 }
 
 .show{left: 0}

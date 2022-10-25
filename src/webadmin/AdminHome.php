@@ -191,7 +191,7 @@ if($_SESSION['admin_sid']==session_id())
 	}else
 	{
 		if($_SESSION['client_sid']==session_id()){
-			header("location:404.php");		
+			header("location:../includes/error.php");		
 		}
 		else{
 				header("location:../login_template.php");

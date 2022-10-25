@@ -1,0 +1,43 @@
+=====
+Future Features For New Members
+by Daniel Salvador
+=====
+
+For (User) Exam List Webpage:
+Files:
+    /src/webexam/ExamList.php
+Features to Develop/Fix:
+    -Develop the Backend code for the (User) Exam List Webpage.
+        -Retrieve all Exam information from the SQL Database and display/list it on the webpage.
+        -Add a "Take Exam" Button which will redirect to its Exam Taker link.
+            -To redirect it, use '?exam_id=n' on the end of the url.
+                -e.g. .../src/webexam/ExamTaker.php?exam_id=1
+    -Merge Backend code to current Frontend code.
+Note:
+    -(If applicable)Use the files from the Admin Exam List Webpage in creating this webpage because they are similar in features.
+    Admin Exam List Webpage:
+        Files:
+            /src/webadmin/AdminExamList.php
+            /src/javascript/admin-controlpanel-examlist.js
+            /src/crud/admin_examlist_update.php
+
+
+For (User) Exam Taker Webpage:
+Files:
+    /src/webexam/ExamTaker.php
+    /src/javascript/examtaker.js
+    /src/crud/examtaker_submit.php
+Features to Develop/Fix:
+    -Add Randomizer to randomize question order everytime the question is loaded/viewed.
+    -(If applicable)Add/Display Question Number.
+    -Develop the Backend code for the Question Navigator Module on the top-right of the webpage.
+        -Jump/Go To the question selected on the Question Navigator Module.
+        -Display Answered and Unanswered questions by color on the Question Navigator Module.
+    -(If applicable)Limit user to answering an exam for only one time.
+    -Retain current status of user when page reloads, instead of repeating the exam.
+    -Fix/Set Frontend UI to be the same with the other webpages on the website.
+    -Fix/Set Frontend UI Footer to follow the maximum window size of the browser.
+Note:
+    -To open an Exam to take it, use '?exam_id=n' on the end of the url.
+        -e.g. .../src/webexam/ExamTaker.php?exam_id=1
+
